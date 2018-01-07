@@ -8,8 +8,4 @@ Load the unpacked folder to the chrome extension locally from your chrome browse
 
 Screenshot
 
-![bitcoin chrome extension](https://ibin.co/w800/3mMdfbGB18NF.png)
-
-
-# crypto-chrome-extn
-# crypto-chrome-extn
+![bitcoin chrome extension](https://ibin.co/w800/3nQLqflcGcke.png)
