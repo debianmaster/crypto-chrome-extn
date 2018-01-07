@@ -19,19 +19,29 @@
 			<div class="card" >
 			  <header class="card-header">
 			    <p class="card-header-title">
-			      {{coin.name}}
+			      {{coin.name}} ({{coin.symbol}}) &nbsp;&nbsp;&nbsp; ${{coin.price_usd}}
 			    </p>
 			  </header>
 			  <div class="card-content">
 			    <div class="content">
-			    	{{coin.symbol}} <br>
-			      ${{coin.price_usd}}
+							<div class="columns">
+									<div class="column">
+											<span v-bind:class="{ 'tag is-success': (coin.percent_change_1h>=0),'tag is-danger': (coin.percent_change_1h<0) }">
+													&nbsp; 1hr {{coin.percent_change_1h}}%
+											</span>
+									</div>
+									<div class="column">
+											<span v-bind:class="{ 'tag is-success': (coin.percent_change_24h>=0),'tag is-danger': (coin.percent_change_24h<0) }">
+													&nbsp; 24hr {{coin.percent_change_24h}}%
+											</span>
+									</div>
+									<div class="column">
+											<span v-bind:class="{  'tag is-success': (coin.percent_change_7d>=0),'tag is-danger': (coin.percent_change_7d<0) }">
+												&nbsp; 7d {{coin.percent_change_7d}}%
+											</span>
+									</div>
+							</div>						
 			    </div>
-			    <!-- <div class="card-footer">
-			    	<p class="card-footer-item">1h <br>{{coin.percent_change_1h}}%</p>
-			    	<p href="#" class="card-footer-item">24h <br>{{coin.percent_change_24h}}%</p>
-			    	<p href="#" class="card-footer-item">7d  <br>{{coin.percent_change_7d}}%</p>
-			    </div> -->
 			  </div>
 			</div>
 		</div>

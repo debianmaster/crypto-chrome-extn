@@ -13,13 +13,14 @@ var app = new Vue({
   },
   computed: {
     filterCoins: function() {
-      var symbols = ["BTC", "ETH", "MIOTA", "XRP", "DASH", "LTC"];
+      var symbols = ["DCN","TRX", "XVG", "VOISE", "PAC", "MINT", "DOGE","RDD","KIN","DOT","VOISE","BTC","MANA","XLM","XRP","IOTA","SC","DENT"];
       return this.coins.filter(function(coin){
         return symbols.indexOf(coin.symbol) > -1 
       });
     }
   },
-  created: function() {
+  methods: {
+    fetchUpdates: function() {
     var url = "https://api.coinmarketcap.com/v1/ticker/";
       var self = this;
       fetch(url, requestConfig)
@@ -41,4 +42,10 @@ var app = new Vue({
           console.log('Fetch Error :-S', err);
         });
     }
-})
+  }
+});
+app.fetchUpdates();
+setInterval(function(){
+  //console.log('test')
+  app.fetchUpdates();
+},60000)
